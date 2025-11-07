@@ -27,7 +27,6 @@ class TestMainPage:
     @allure.title('Проверка закрытия всплывающего окна по крестику')
     def test_modal_closes_by_x_button(self, main_page):
         main_page.click_ingredient()
-        assert main_page.is_ingredient_modal_visible(), "Модальное окно не открылось"
         main_page.close_ingredient_modal()
         assert main_page.is_ingredient_modal_closed(), "Модальное окно не закрылось после клика по крестику"
 

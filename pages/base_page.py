@@ -56,6 +56,14 @@ class BasePage:
         except:
             return False
 
+    @allure.step('Ждать невидимости элемента')
+    def wait_element_invisible(self, locator, timeout=10):
+        try:
+            WebDriverWait(self.driver, timeout).until(EC.invisibility_of_element_located(locator))
+            return True
+        except:
+            return False
+
     @allure.step('Принудительно закрыть все модальные окна')
     def force_close_modals(self):
         try:

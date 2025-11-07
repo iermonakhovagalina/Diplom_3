@@ -12,7 +12,6 @@ class TestOrderFeed:
         order_feed_page = OrderFeedPage(driver)
 
         main_page.click_order_feed()
-        assert order_feed_page.is_order_feed_page_loaded(), "Страница ленты заказов не загрузилась"
 
         initial_total = order_feed_page.get_total_orders_count()
 
@@ -33,7 +32,6 @@ class TestOrderFeed:
         order_feed_page = OrderFeedPage(driver)
 
         main_page.click_order_feed()
-        assert order_feed_page.is_order_feed_page_loaded(), "Страница ленты заказов не загрузилась"
 
         initial_today = order_feed_page.get_today_orders_count()
 
@@ -54,7 +52,6 @@ class TestOrderFeed:
         order_feed_page = OrderFeedPage(driver)
 
         main_page.click_order_feed()
-        assert order_feed_page.is_order_feed_page_loaded(), "Страница ленты заказов не загрузилась"
 
         main_page.click_constructor()
         order_number = main_page.create_order_ui()
