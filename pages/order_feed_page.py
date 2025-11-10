@@ -2,6 +2,7 @@ from pages.base_page import BasePage
 from locators.locators import OrderFeedLocators
 import allure
 
+
 class OrderFeedPage(BasePage):
 
     def __init__(self, driver):
@@ -89,15 +90,15 @@ class OrderFeedPage(BasePage):
 
         return False
 
-
     @allure.step('Ждать появления заказа в разделе "В работе"')
     def wait_for_order_in_progress(self, order_number, timeout=15):
         import time
         normalized_order = self.normalize_order_number(order_number)
         start_time = time.time()
-        
+
         while time.time() - start_time < timeout:
             orders_in_progress = self.get_orders_in_progress_normalized()
             if normalized_order in orders_in_progress:
                 return True
         return False
+
